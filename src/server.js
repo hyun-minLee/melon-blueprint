@@ -33,41 +33,86 @@ app.use("/static", express.static("assets"));
 
 app.use("/", rootRouter);
 
-app.get("/song", (req, res) => {
-  console.log("DB");
-  const newSong = new Song({
-    title: "가시", singer_name: "버즈", playcount: 443, url: "http://naver.com"
-  });
-  newSong.save((err, result) => {
-    if (err) {
-      console.log(err);
-    } else {
-      console.log(result);
-    }
-  });
-  res.send("테스트 수행");
+// app.get("/song", (req, res) => {
+//   console.log("DB");
+//   const newSong = new Song({
+//     title: "가시", singer_name: "버즈", playcount: 443, url: "http://naver.com"
+//   });
+//   newSong.save((err, result) => {
+//     if (err) {
+//       console.log(err);
+//     } else {
+//       console.log(result);
+//     }
+//   });
+//   res.send("테스트 수행");
 
-});
+// });
 
-app.get("/insert", (req, res) => {
+app.get("/insert", async (req, res) => {
 
-  const songData = {
-    title: "Test Song",
-    singer_name: "Me",
+  const songData = [
+    {
+    title: "가시",
+    singer_name: "버즈",
     playcount: 1000,
-    url: "https://example.com/my-song",
-  };
+    url: "https://example.com/가시",
+    },
+    {
+      title: "남자를 몰라",
+      singer_name: "버즈",
+      playcount: 2000,
+      url: "https://example.com/남자를 몰라",
+    },
+    {
+      title: "겁쟁이",
+      singer_name: "버즈",
+      playcount: 3000,
+      url: "https://example.com/겁쟁이",
+    },
+    {
+      title: "My Love",
+      singer_name: "버즈",
+      playcount: 4000,
+      url: "https://example.com/My Love",
+    },
+    {
+      title: "비망록",
+      singer_name: "버즈",
+      playcount: 5000,
+      url: "https://example.com/비망록",
+    },
+    {
+      title: "나에게로 떠나는 여행",
+      singer_name: "버즈",
+      playcount: 6000,
+      url: "https://example.com/나에게로 떠나는 여행",
+    },
+    {
+      title: "어쩌면..",
+      singer_name: "버즈",
+      playcount: 7000,
+      url: "https://example.com/어쩌면..",
+    },
 
-  db.collection("Song").insertOne(songData, (err, result) => {
+
+];
+  try {
+      await db.collection("Song").insertMany(songData, (err, result) => {
     if (err) {
       console.log(err);
     } else {
       console.log(result);
-      db.close(() => {
+      db.close((req, res) => {
         console.log("Database connection closed");
       });
     }
   })
+} catch {
+    res.send("error");
+} finally {
+    res.redirect("/");
+}
 });
 
 /*
