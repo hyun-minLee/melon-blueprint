@@ -7,6 +7,8 @@ import { localsMiddleware } from "./middlewares";
 import rootRouter from "./routers/rootRouter";
 import Song from "./models/Song";
 import db from "./db";
+var fs = require('fs');
+var ejs = require('ejs');
 // const db = require("./db");
 
 
@@ -117,11 +119,18 @@ app.get("/insert", async (req, res) => {
 
 
 app.get("/find", (req, res) => {
-  db.collection("Song").find({}).sort({"playcount" : -1 }).toArray(function(err, result) {
-    if (err) throw err;
-    console.log(result);
-    db.close();
-  })
+  var mysort = {playcount : -1};
+  fs.readFile("test.html", "utf8", function(err, data) {
+    db.collection("Song").find({}).sort(mysort).toArray(function(err, cursor) {
+      
+      res.writeHead(200, {"Content-type":"text/html;charset=utf-8"});
+      res.end(ejs.render(data, {
+        data:cursor
+      }));
+    
+      db.close();
+    });
+  });
 })
 
 /*
