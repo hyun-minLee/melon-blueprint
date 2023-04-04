@@ -115,6 +115,12 @@ app.get("/insert", async (req, res) => {
 }
 });
 
+
+app.get("/find", (req, res) => {
+  const temp = db.collection("Song").find({}).sort({"playcount" : -1 })
+  console.log(temp);
+})
+
 /*
 Add more routers here!
 */
