@@ -10,6 +10,12 @@ export const home = async (req, res) => {
   return res.render("home", { pageTitle: "Home" });
 };
 
+export const pug = async (req, res) => {
+  console.log("pug");
+  return res.render("test", { pageTitle: "Home", message: "pug test"});
+};
+
+
 export const insert = async (req, res) => {
     const songData = [
     {
@@ -77,15 +83,26 @@ try {
 
 export const find = (req, res) => {
   var mysort = {playcount : -1};
-  fs.readFile("test.html", "utf8", function(err, data) {
     db.collection("Song").find({}).sort(mysort).toArray(function(err, cursor) {
-      
-      res.writeHead(200, {"Content-type":"text/html;charset=utf-8"});
-      res.end(ejs.render(data, {
-        data:cursor
-      }));
+      console.log("cursor 출력: ")
+      console.log(cursor);
+      return res.render("songlist", {posts: cursor});
     
       db.close();
-    });
-  });
+    })
 }
+
+// export const find = (req, res) => {
+//   var mysort = {playcount : -1};
+//   fs.readFile("test.html", "utf8", function(err, data) {
+//     db.collection("Song").find({}).sort(mysort).toArray(function(err, cursor) {
+      
+//       res.writeHead(200, {"Content-type":"text/html;charset=utf-8"});
+//       res.end(ejs.render(data, {
+//         data:cursor
+//       }));
+    
+//       db.close();
+//     });
+//   });
+// }

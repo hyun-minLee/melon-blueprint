@@ -7,6 +7,7 @@ import { localsMiddleware } from "./middlewares";
 import rootRouter from "./routers/rootRouter";
 import insertRouter from "./routers/insertRouter"
 import findRouter from "./routers/findRouter"
+import pugRouter from "./routers/pugRouter"
 import Song from "./models/Song";
 import db from "./db";
 var fs = require('fs');
@@ -38,6 +39,7 @@ app.use("/static", express.static("assets"));
 app.use("/", rootRouter);
 app.use("/insert", insertRouter);
 app.use("/find", findRouter);
+app.use("/pug", pugRouter);
 
 // app.get("/song", (req, res) => {
 //   console.log("DB");

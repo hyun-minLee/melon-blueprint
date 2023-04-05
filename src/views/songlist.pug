@@ -1,0 +1,53 @@
+doctype html
+html
+  head
+    title Melon List
+    style.
+      .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        width: 100vh;
+      }
+      .item1 {
+        justify-content: center;
+        border: 1px solid black;
+        
+      }
+
+      .item2 {
+      
+      }
+
+  body
+    h1 My Song
+    // 게시글 목록 표시 부분
+    div.container
+      div.item
+        div.item1 
+          span 순위 
+          span 곡정보 
+          span 앨범 
+          span 좋아요
+          span 듣기
+          span 담기
+          span 다운
+          span 뮤비 
+      each post in posts
+        div.item2
+          span #{post.title} 
+          span #{post.singer_name} 
+          span #{post.playcount} 
+          span #{post.url}
+
+
+    // 게시글 내용 표시 부분
+    if currentPost
+      h2= currentPost.title
+      p= currentPost.content
+    else
+      p Please select a post to view.
+
+    // 게시글 작성 링크
+    a(href="/posts/new") Write a post
