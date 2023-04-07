@@ -5,7 +5,7 @@ const songSchema = new mongoose.Schema({
     singer_name: { type: String, required: true },
     playcount: { type: Number, required: true },
     url: { type: String, required: true },
-    
+    image: { type: String, required: true },
   },
   {
     collection: 'Song'

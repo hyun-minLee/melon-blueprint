@@ -22,60 +22,66 @@ export const insert = async (req, res) => {
     title: "가시",
     singer_name: "버즈",
     playcount: 1000,
+    image: "가시.jpg",
     url: "https://example.com/가시",
     },
     {
       title: "남자를 몰라",
       singer_name: "버즈",
       playcount: 2000,
+      image: "남자를 몰라.jpg",
       url: "https://example.com/남자를 몰라",
     },
     {
       title: "겁쟁이",
       singer_name: "버즈",
       playcount: 3000,
+      image: "겁쟁이.jpg",
       url: "https://example.com/겁쟁이",
     },
     {
       title: "My Love",
       singer_name: "버즈",
       playcount: 4000,
+      image: "My Love.jpg",
       url: "https://example.com/My Love",
     },
     {
       title: "비망록",
       singer_name: "버즈",
       playcount: 5000,
+      image: "비망록.jpg",
       url: "https://example.com/비망록",
     },
     {
       title: "나에게로 떠나는 여행",
       singer_name: "버즈",
       playcount: 6000,
+      image: "나에게로 떠나는 여행.jpg",
       url: "https://example.com/나에게로 떠나는 여행",
     },
     {
       title: "어쩌면..",
       singer_name: "버즈",
       playcount: 7000,
+      image: "어쩌면.jpg",
       url: "https://example.com/어쩌면..",
     },
   ]
-try {
-      await db.collection("Song").insertMany(songData, (err, result) => {
-      if (err) {
-        console.log(err);
-      } else {
-        console.log(result);
-      }
-    })
-  } catch {
-   
+
+  try {
+    const result = await db.collection("Song").insertMany(songData);
+    console.log(result);
+  } catch (err) {
+    console.log(err);
   } finally {
-      db.close((req, res) => {
+    try {
+      await db.close();
       console.log("Database connection closed");
-      });
-      res.redirect("/");
+    } catch (err) {
+      console.log(err);
+    }
+    // res.redirect("/");
   }
 
 };
