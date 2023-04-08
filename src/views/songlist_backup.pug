@@ -1,0 +1,114 @@
+doctype html
+html
+  head
+    title Melon List
+    style.
+      .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        width: 200vh;
+        background-color: #f9f9f9;
+      }
+      .item {
+        border: 1px solid black;
+        height: 100%;
+        width: 100%;
+      }
+    
+      .item1 {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        border-top: 1px solid #e5e5e5;
+        border-bottom: 1px solid #e5e5e5;
+      }
+
+      .item1-1-rank {
+        display: flex;
+        flex-direction: row;
+        width: 10%;
+        flex-grow: 1;
+        justify-content: center;
+      }
+
+      .item1-1 {
+        display: flex;
+        flex-direction: row;
+        width: 15%;
+        flex-grow: 1;
+        justify-content: center;
+      }
+      .item2 {
+        display: flex;
+        flex-direction: row;
+        border-bottom: 1px solid #f2f2f2;
+      }
+
+
+      .item2-1 {
+        display: flex;
+        width: 10%;
+        height: 5%;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .item2-1-play {
+        width: 3%;  
+      }
+
+      .item2-1-img {
+        width: 5%;
+        height: 5%;
+      }
+      .item_div2-1 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 15%;
+      }
+
+  body
+    h1 My Song
+    // 게시글 목록 표시 부분
+    div.container
+      div.item
+        div.item1 
+          span.item1-1-rank 순위
+          span.item1-1 곡정보 
+          span.item1-1 좋아요
+          span.item1-1 듣기
+          span.item1-1 담기
+          span.item1-1 다운
+          span.item1-1 뮤비
+        each post in posts
+          div.item2
+            span.item2-1 sample
+            span.item2-1-img
+              img(src=`/static/images/${post.image}` style='max-width: 100%' , alt='이미지 없음')
+            div.item_div2-1
+              div #{post.title}
+              div #{post.singer_name}
+            span.item2-1 #{post.playcount}
+            span.item2-1-play 
+              a(href=`${post.url}`, target='_blank')
+                img(src=`/static/images/play.jpg` style='max-width: 100%' , alt='이미지 없음')
+            span.item2-1 
+        
+
+
+        //- script(src="script.js")
+
+
+    //- // 게시글 내용 표시 부분
+    //- if currentPost
+    //-   h2= currentPost.title
+    //-   p= currentPost.content
+    //- else
+    //-   p Please select a post to view.
+
+    //- // 게시글 작성 링크
+    //- a(href="/posts/new") Write a post
