@@ -3,6 +3,7 @@ html
   head
     title Melon List
     link(rel='stylesheet' href='/static/css/input.css')
+    link(rel='stylesheet' href='/static/css/modal.css')
     script(src='/static/js/myscript.js')
     - var number =1;
     
@@ -176,7 +177,7 @@ html
           span.item2-2 #{number}
           - number++;
           span.item2-3 -
-          span.item2-4 
+          span.item2-4
             img(src=`/static/images/${post.image}` style='max-width: 100%' , alt='이미지 없음', onclick='openModal()')
           span.item2-5
             div #{post.title}
@@ -197,14 +198,18 @@ html
           span.item2-11
             a(href=``, target='_blank')
               img(src=`/static/images/뮤비.jpg` style='max-width: 70%' , alt='이미지 없음')
-      
-          
-div#myModal.modal
+
+        //- div#modal
+        //-   div#modalcontent
+        //-     img(src=`/static/images/${post.image}` style='max-width: 100%')
+        //-     span.close(onclick="document.getElementById('modal').style.display='none'") &times;
+
+
+// 모달 창
+div.modal
   div.modal-content
-    span.close(onclick="document.getElementById('myModal').style.display='none'") &times;
-    p 모달 창 내용
-        
-        
+    span.close &times;
+    img.modalImage(src=`/static/images/google.png` alt="")
 
 
         //- script(src="script.js")
