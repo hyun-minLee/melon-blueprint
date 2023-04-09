@@ -100,15 +100,6 @@ html
         
 
 
-        //- script(src="script.js")
-
-
-    //- // 게시글 내용 표시 부분
-    //- if currentPost
-    //-   h2= currentPost.title
-    //-   p= currentPost.content
-    //- else
-    //-   p Please select a post to view.
-
-    //- // 게시글 작성 링크
-    //- a(href="/posts/new") Write a post
+#myModal.modal
+  span.close(onclick='closeModal()') &times;
+  img.modal-content(src=`/static/images/${post.image}`, alt='이미지 없음')

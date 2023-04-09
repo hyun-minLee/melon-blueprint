@@ -3,7 +3,7 @@ html
   head
     title Melon List
     link(rel='stylesheet' href='/static/css/input.css')
-    //- script(src='/static/js/myscript.js')
+    script(src='/static/js/myscript.js')
     - var number =1;
     
 
@@ -23,14 +23,18 @@ html
         flex-direction: row;
         align-items: center;
         justify-content: center;
-        border: 1px solid black;
+        border-top: 1px solid #e5e5e5;
+        border-bottom: 1px solid #e5e5e5;
+        
+
         height: 5%;
         width: 100%;
       }
       .item2 {
         display: flex;
         flex-direction: row;
-        border: 1px solid black;
+        border-top: 1px solid #e5e5e5;
+        border-bottom: 1px solid #e5e5e5;
         height: 95%;
         width: 100%;
       }
@@ -173,7 +177,7 @@ html
           - number++;
           span.item2-3 -
           span.item2-4 
-            img(src=`/static/images/${post.image}` style='max-width: 100%' , alt='이미지 없음')
+            img(src=`/static/images/${post.image}` style='max-width: 100%' , alt='이미지 없음', onclick='openModal()')
           span.item2-5
             div #{post.title}
             div #{post.singer_name}  
@@ -195,9 +199,10 @@ html
               img(src=`/static/images/뮤비.jpg` style='max-width: 70%' , alt='이미지 없음')
       
           
-        
-          
-        
+div#myModal.modal
+  div.modal-content
+    span.close(onclick="document.getElementById('myModal').style.display='none'") &times;
+    p 모달 창 내용
         
         
 
