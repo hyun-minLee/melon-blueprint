@@ -19,14 +19,14 @@ import "/src/assets/css/mycss.css";
 let img =document.querySelector('.imgitme');
 console.log("Fadsffa");
 
-    img.addEventListener('click', function() {
-        var modal = document.querySelector(".modal");
-        var modalImg = document.querySelector(".modalImage");
-        var captionText = document.querySelector("..modal-caption");
-        modal.style.display = "block";
-        modalImg.src = this.src;
-        captionText.innerHTML = this.alt;
-    });
+    // img.addEventListener('click', function() {
+    //     var modal = document.querySelector(".modal");
+    //     var modalImg = document.querySelector(".modalImage");
+    //     var captionText = document.querySelector("..modal-caption");
+    //     modal.style.display = "block";
+    //     modalImg.src = this.src;
+    //     captionText.innerHTML = this.alt;
+    // });
 // for(let i=0; i<imgs.length; i++) {
 //     imgs[i].addEventListener("click", function() {
 //         var modal = document.querySelector(".modal");
@@ -38,7 +38,7 @@ console.log("Fadsffa");
 //     });
 // }
 
-function myclick() {
+function submit() {
     window.alert("Fasfa");
             // var modal = document.querySelector(".modal");
             // var modalImg = document.querySelector(".modalImage");

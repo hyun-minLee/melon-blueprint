@@ -186,8 +186,8 @@ html
             img(src='/static/images/하트.jpg' style='max-width: 20%' , alt='이미지 없음')
             span #{post.playcount}
           span.item2-8
-            //- a(href=`${post.url}`, target='_blank')
-            img.imgitme(src=`/static/images/play.jpg` style='max-width: 40%' ,alt='이미지 없음')
+            a(href=`${post.url}`, target='_blank')
+              img.imgitme(src=`/static/images/play.jpg` style='max-width: 40%' ,alt='이미지 없음')
           span.item2-9
             a(href=``, target='_blank')
               img(src=`/static/images/장바구니.jpg` style='max-width: 40%' , alt='이미지 없음')

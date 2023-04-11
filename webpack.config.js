@@ -14,12 +14,6 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: "css/mycss.css",
     }),
-    // new CopyWebpackPlugin({
-    //   patterns: [
-    //     { from: './src/assets/images', to: 'assets/images' },
-    //   ],
-    // }),
-
   ],
   output: {
     filename: "js/[name].js", 
@@ -41,6 +35,10 @@ module.exports = {
             },
           },
         ],
+      },
+      {
+        test: /\.pug$/,
+        use: 'pug-loader'
       },
       {
         test: /\.js$/,
