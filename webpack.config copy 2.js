@@ -6,13 +6,12 @@ const BASE_JS = "./src/client/js/";
 
 module.exports = {
   entry: {
-    // main: BASE_JS + "main.js", 
+    main: BASE_JS + "main.js", 
     myscript: BASE_JS + "myscript.js",
-    
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: "css/mycss.css",
+      filename: "css/styles.css",
     }),
     // new CopyWebpackPlugin({
     //   patterns: [
@@ -52,7 +51,7 @@ module.exports = {
         },
       },
       {
-        test: /\.(css|scss)$/, 
+        test: /\.scss$/,
         use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
       },
     ],

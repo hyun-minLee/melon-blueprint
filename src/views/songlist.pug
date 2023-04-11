@@ -2,13 +2,13 @@ doctype html
 html
   head
     title Melon List
-    link(rel='stylesheet' href='/static/css/input.css')
-    link(rel='stylesheet' href='/static/css/modal.css')
+    //- link(rel='stylesheet' href='/static/css/input.css')
+    //- link(rel='stylesheet' href='/static/css/mycss.css')
     script(src='/static/js/myscript.js')
-    - var number =1;
     
-
-    style.
+    - var number =1;
+   
+     style.
       .container {
         display: flex;
         flex-direction: column;
@@ -148,7 +148,6 @@ html
         justify-content: center;
         align-items: center;
       }
-    
 
   body
     h1
@@ -178,7 +177,7 @@ html
           - number++;
           span.item2-3 -
           span.item2-4
-            img(src=`/static/images/${post.image}` style='max-width: 100%' , alt='이미지 없음', onclick='openModal()')
+            img(src=`/static/images/${post.image}` style='max-width: 100%' , alt='이미지 없음')
           span.item2-5
             div #{post.title}
             div #{post.singer_name}  
@@ -187,8 +186,8 @@ html
             img(src='/static/images/하트.jpg' style='max-width: 20%' , alt='이미지 없음')
             span #{post.playcount}
           span.item2-8
-            a(href=`${post.url}`, target='_blank')
-              img(src=`/static/images/play.jpg` style='max-width: 40%' , alt='이미지 없음')
+            //- a(href=`${post.url}`, target='_blank')
+            img.imgitme(src=`/static/images/play.jpg` style='max-width: 40%' ,alt='이미지 없음')
           span.item2-9
             a(href=``, target='_blank')
               img(src=`/static/images/장바구니.jpg` style='max-width: 40%' , alt='이미지 없음')
@@ -203,6 +202,7 @@ html
         //-   div#modalcontent
         //-     img(src=`/static/images/${post.image}` style='max-width: 100%')
         //-     span.close(onclick="document.getElementById('modal').style.display='none'") &times;
+        
 
 
 // 모달 창
@@ -210,7 +210,7 @@ div.modal
   div.modal-content
     span.close &times;
     img.modalImage(src=`/static/images/google.png` alt="")
-
+    div.modal-caption
 
         //- script(src="script.js")
 
