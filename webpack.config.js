@@ -5,11 +5,14 @@ const path = require("path");
 const BASE_JS = "./src/client/js/";
 
 module.exports = {
-  entry: {
+  entry: 
     // main: BASE_JS + "main.js", 
-    myscript: BASE_JS + "myscript.js",
+    "./src/client/js/myscript.js",
+  // entry: {
+  //   // main: BASE_JS + "main.js", 
+  //   myscript: BASE_JS + "myscript.js",
     
-  },
+  // },
   plugins: [
     new MiniCssExtractPlugin({
       filename: "css/mycss.css",
@@ -38,7 +41,20 @@ module.exports = {
       },
       {
         test: /\.pug$/,
-        use: 'pug-loader'
+        use: [
+          {
+            loader: 'html-loader',
+            options: {
+              minimize: true
+            }
+          },
+          {
+            loader: 'pug-loader',
+            options: {
+              // Pug 관련 옵션 설정
+            }
+          }
+        ]
       },
       {
         test: /\.js$/,

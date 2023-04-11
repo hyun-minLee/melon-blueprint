@@ -15,6 +15,11 @@
 // import "/src/assets/images/하트.jpg";
 // import "/src/assets/css/modal.css";
 
+// console.log("111111");
+// function myfunction() {
+//     window.alert("fff");
+// }
+
 
 // function openModal() {
 //     var modal = document.querySelector(".modal");

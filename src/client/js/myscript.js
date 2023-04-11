@@ -1,4 +1,4 @@
-// import "../scss/styles.scss";
+import "../scss/styles.scss";
 import "/src/assets/images/google.png";
 import "/src/assets/images/Melon로고.jpg";
 import "/src/assets/images/My Love.jpg";
@@ -15,9 +15,6 @@ import "/src/assets/images/장바구니.jpg";
 import "/src/assets/images/하트.jpg";
 import "/src/assets/css/mycss.css";
 
-// let imgs= document.querySelectorAll('.item2-8 img');
-let img =document.querySelector('.imgitme');
-console.log("Fadsffa");
 
     // img.addEventListener('click', function() {
     //     var modal = document.querySelector(".modal");
@@ -38,30 +35,21 @@ console.log("Fadsffa");
 //     });
 // }
 
-function submit() {
-    window.alert("Fasfa");
-            // var modal = document.querySelector(".modal");
-            // var modalImg = document.querySelector(".modalImage");
-            // var captionText = document.querySelector("..modal-caption");
-            // modal.style.display = "block";
-            // modalImg.src = this.src;
-            // captionText.innerHTML = this.alt;
+
+    window.addEventListener('DOMContentLoaded', function() {
+        // DOM 요소가 생성된 후에 실행되어야 하는 코드
+        let myModal = document.getElementById('myModal');
+        myModal.style.display = 'none';
+        let modalclose = document.querySelector('.modal-close');
+        let imgitem = document.querySelectorAll('.imgitem');
+        for(let i=0; i<imgitem.length; i++) {
+            imgitem[i].addEventListener('click', function() {
+            myModal.style.display = 'block';
+            document.querySelector('.frame').src=imgitem[i].alt
+            });
         }
 
-
-function openModal() {
-    // var modal = document.querySelector(".modal");
-    // // var modalImage = document.querySelector(".modalImage");
-    // modal.style.display = "block";
-    console.log("테스트");
-    // modalImage.style.display="block";
-    
-  }
-  
-//   var modal = document.querySelector(".modal");
-//   window.onclick = function(event) {
-//     if (event.target == modal) {
-//       modal.style.display = "none";
-//       console.log("나와라");
-//     }
-//   }
+        modalclose.addEventListener('click', function() {
+            myModal.style.display='none';
+        }); 
+    });
