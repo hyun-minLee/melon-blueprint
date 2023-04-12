@@ -1,0 +1,89 @@
+doctype html
+html
+head
+    title Login Page
+    //- link(rel='stylesheet', href='/css/login.css')
+style.
+    /* login.css 파일 내용 예시 */
+    body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    }
+
+    .login-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    }
+
+    .login-content {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    }
+
+    h2 {
+    margin-top: 0;
+    }
+
+    .form-group {
+    margin-bottom: 10px;
+    }
+
+    .label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    }
+
+    .input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #dddddd;
+    border-radius: 3px;
+    }
+
+    .button {
+    display: inline-block;
+    padding: 8px 15px;
+    background-color: #007bff;
+    color: #ffffff;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    }
+
+    .button:hover {
+    background-color: #0056b3;
+    }
+
+    .outer-link {
+    margin-top: 10px;
+    text-align: right;
+    }
+
+    .outer-link a {
+    color: #007bff;
+    text-decoration: none;
+    }
+
+    .outer-link a:hover {
+    text-decoration: underline;
+    }
+
+body
+    .login-page
+        .login-content
+            h2 Login
+            form(action='/login', method='post')
+                input(type='text', name='username', placeholder='Username')
+                input(type='password', name='password', placeholder='Password')
+                button(type='submit') Log in
+                .outer-link
+                a(href='/forgot-password') Forgot Password?

@@ -8,16 +8,15 @@ import rootRouter from "./routers/rootRouter";
 import insertRouter from "./routers/insertRouter"
 import findRouter from "./routers/findRouter"
 import pugRouter from "./routers/pugRouter"
+import loginRouter from "./routers/loginRouter"
 import Song from "./models/Song";
 import db from "./db";
 var fs = require('fs');
 var ejs = require('ejs');
 // const db = require("./db");
 
-
 const app = express();
 const logger = morgan("dev");
-
 app.set("view engine", "pug");
 app.set("views", process.cwd() + "/src/views");
 app.use(logger);
@@ -40,7 +39,23 @@ app.use("/static", express.static("assets"));
 app.use("/", rootRouter);
 app.use("/insert", insertRouter);
 app.use("/find", findRouter);
-app.use("/pug", pugRouter);
+app.use("/login", loginRouter);
+// app.use("/postlogin", loginRouter);
+// app.use("/pug", pugRouter);
+
+app.post("/login", (req, res) => {
+  const { username, password } =  req.body;
+  console.log({username, password});
+  if(username == 'admin' && password == 'admin') {
+    req.session.isLoggedIn = true;
+    req.session.username = username;
+    res.redirect('/find');
+  } else {
+    res.redirect('/login');
+    // res.send('Invalid username or password');
+    
+  }
+});
 
 // app.get("/song", (req, res) => {
 //   console.log("DB");
