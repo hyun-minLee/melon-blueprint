@@ -6,14 +6,14 @@ html
     //- link(rel='stylesheet' href='/static/css/mycss.css')
     script(src='static/js/main.js')
     - var number =1;
-
+    
     style.
       .container {
         display: flex;
         flex-direction: column;
         align-items: center;
         height: 100vh;
-        width: 120vh;
+        width: 120vh; 
         background-color: #f9f9f9;
         font-family: 'Noto Sans KR', sans-serif;
       }
@@ -195,11 +195,22 @@ html
         left: 0;
         }
 
+      input[type="form"][name="favorite"] {
+      max-width: 100%;
+      position: relative;
+      border-radius: 10px;
+      border: 2px solid rgba(0, 253, 76, 0.5);
+      height: 30px;
+      left: 6px;
+      top: 8px;
+      }
+
   body
     h1
       div(style='display: flex; align-items: center;')
-        img(src=`/static/images/Melon로고.jpg` style='max-width: 70%' , alt='이미지 없음')
-        input(type="form" name="favorite" style='max-width: 70%; position: relative; left: 6px; top:8px'  placeholder="노래 검색")
+        img(src=`/static/images/Melon로고.jpg` alt='이미지 없음')
+        div
+          input(type="form" name="favorite" placeholder="노래 검색")
     // 게시글 목록 표시 부분
     div.container
       div.item1
