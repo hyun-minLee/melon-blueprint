@@ -6,7 +6,7 @@ import db from "../db";
 
 export const login = async (req, res) => {
   console.log("Get Login");
-  return res.render("playlist", { pageTitle: "Home" });
+  return res.render("login", { pageTitle: "Home" });
 };
 
 // export const login = async (req, res) => {

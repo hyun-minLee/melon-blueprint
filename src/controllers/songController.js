@@ -5,10 +5,16 @@ import db from "../db";
 var fs = require('fs');
 var ejs = require('ejs');
 
+export const playlist = async (req, res) => {
+  console.log("playlist");
+  return res.render("playlist", { pageTitle: "Home" });
+};
+
 export const home = async (req, res) => {
   console.log("home");
   return res.render("home", { pageTitle: "Home" });
 };
+
 
 export const pug = async (req, res) => {
   console.log("pug");

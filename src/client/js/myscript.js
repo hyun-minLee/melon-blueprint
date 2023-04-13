@@ -13,6 +13,10 @@ import "/src/assets/images/비망록.jpg";
 import "/src/assets/images/어쩌면.jpg";
 import "/src/assets/images/장바구니.jpg";
 import "/src/assets/images/하트.jpg";
+import "/src/assets/images/뒤로가기.jpg";
+import "/src/assets/images/앞으로가기.jpg";
+import "/src/assets/images/멈춤.jpg";
+import "/src/assets/images/재생.jpg";
 import "/src/assets/css/mycss.css";
 
 
