@@ -1,0 +1,59 @@
+doctype html
+html
+  head
+    title My List
+  
+    style.
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 120vh;
+        width: 50vh; 
+        background-color: #f9f9f9;
+        border-radius: 20px;
+        box-shadow: 0px 0px 10px #000;
+        font-family: 'Noto Sans KR', sans-serif;
+      }
+
+      .item1 {
+        border-radius: 70%;
+        width: 150px;
+        height: 150px;
+        box-shadow: 0px 0px 10px #000;
+      }
+      .item2 {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        height:60px;
+        width: 100%;
+      }
+
+      .item3 {
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba(236, 177, 13, 0.5);
+        width: 30%;
+        height:40px;
+        border-radius: 20px;
+        box-shadow: 0px 0px 10px #000;
+        
+      }
+
+  body
+    div.container
+      div(style='display: flex; align-items: center;')
+        img.item1(src=`/static/images/Melon로고.jpg` alt='이미지 없음')
+      div.item2
+        span.item3 shuffle
+        span.item3 좋아요 
+      div
+        img(src=`/static/images/Melon로고.jpg` alt='이미지 없음')
+      div
+        img(src=`/static/images/Melon로고.jpg` alt='이미지 없음') 
+      div
+        img(src=`/static/images/Melon로고.jpg` alt='이미지 없음')
+        
+    

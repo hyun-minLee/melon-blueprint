@@ -40,22 +40,28 @@ app.use("/", rootRouter);
 app.use("/insert", insertRouter);
 app.use("/find", findRouter);
 app.use("/login", loginRouter);
+
+app.get("/playlist", (req,res) => {
+  res.sendFile('./playlist.html');
+
+})
+
 // app.use("/postlogin", loginRouter);
 // app.use("/pug", pugRouter);
 
-app.post("/login", (req, res) => {
-  const { username, password } =  req.body;
-  console.log({username, password});
-  if(username == 'admin' && password == 'admin') {
-    req.session.isLoggedIn = true;
-    req.session.username = username;
-    res.redirect('/find');
-  } else {
-    res.redirect('/login');
-    // res.send('Invalid username or password');
+// app.post("/login", (req, res) => {
+//   const { username, password } =  req.body;
+//   console.log({username, password});
+//   if(username == 'admin' && password == 'admin') {
+//     req.session.isLoggedIn = true;
+//     req.session.username = username;
+//     res.redirect('/find');
+//   } else {
+//     res.redirect('/login');
+//     // res.send('Invalid username or password');
     
-  }
-});
+//   }
+// });
 
 // app.get("/song", (req, res) => {
 //   console.log("DB");
