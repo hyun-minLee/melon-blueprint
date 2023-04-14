@@ -17,6 +17,7 @@ import "/src/assets/images/뒤로가기.jpg";
 import "/src/assets/images/앞으로가기.jpg";
 import "/src/assets/images/멈춤.jpg";
 import "/src/assets/images/재생.jpg";
+import "/src/assets/images/(클릭)장바구니.jpg";
 import "/src/assets/css/mycss.css";
 
 
@@ -41,17 +42,55 @@ import "/src/assets/css/mycss.css";
 
 
     window.addEventListener('DOMContentLoaded', function() {
+        let submitdata=[];
         // DOM 요소가 생성된 후에 실행되어야 하는 코드
         let myModal = document.getElementById('myModal');
         myModal.style.display = 'none';
         let modalclose = document.querySelector('.modal-close');
         let imgitem = document.querySelectorAll('.imgitem');
+        let btn = document.querySelector('.btn.btn-primary');
+        let basket = document.querySelectorAll('.basket');
+        let addbasket = document.querySelectorAll('.addbasket');
+        let item2 = document.querySelectorAll('.item2');
+        let container = document.querySelector('.container');
         for(let i=0; i<imgitem.length; i++) {
             imgitem[i].addEventListener('click', function() {
             myModal.style.display = 'block';
             document.querySelector('.frame').src=imgitem[i].alt
             });
         }
+
+        for(let i=0; i<basket.length; i++) {    
+            basket[i].addEventListener('click', function() {
+                btn.style.display='block';
+                basket[i].style.display='none';
+                addbasket[i].style.display='block';
+                let object = [];
+                let image= item2[i].children[3].children[0].src;
+                let title = item2[i].children[4].children[0].innerHTML;
+                let singer = item2[i].children[4].children[1].innerHTML;
+                let like = item2[i].children[6].children[1].innerHTML;
+                object.push({'image': image});
+                object.push({'title': title});
+                object.push({'singer': singer});
+                object.push({'like': like});
+                submitdata.push(object);
+
+                basket[i].style.display='none';
+                basket[i].style.display.filter
+                if(submitdata.length >1) {
+                console.log(submitdata);
+
+            
+                }
+            });
+        }
+
+        btn.addEventListener('click', function() {
+            console.log("버튼");
+            window.location.href='/playlist?submitdata'+submitdata;
+        });
+
 
         modalclose.addEventListener('click', function() {
             myModal.style.display='none';

@@ -6,7 +6,10 @@ var fs = require('fs');
 var ejs = require('ejs');
 
 export const playlist = async (req, res) => {
-  console.log("playlist");
+  console.log(req.submitdata);
+  
+
+  
   return res.render("playlist", { pageTitle: "Home" });
 };
 

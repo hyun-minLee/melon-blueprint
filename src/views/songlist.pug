@@ -99,6 +99,7 @@ html
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        
       }
 
 
@@ -115,7 +116,13 @@ html
         justify-content: center;
         align-items: center;
         position: relative; right: 4px
+        
       }
+      .addbasket {
+        display:none;
+        box-shadow: 0px 0px 5px #001;
+      }
+
       .item1-10, .item2-10 {
         width: 5%;
         display:flex;
@@ -193,22 +200,45 @@ html
         left: 0;
         }
 
+      .navigator {
+        display:flex;
+        align-items: center;
+        width:40%;
+        height:5vh;
+      }
+
       input[type="form"][name="favorite"] {
-      max-width: 100%;
+      width: 50%;
       position: relative;
       border-radius: 10px;
       border: 2px solid rgba(0, 253, 76, 0.5);
-      height: 30px;
-      left: 6px;
-      top: 8px;
+      height: 100%;
+      margin-top:5%;
+      }
+
+      .btn.btn-primary {
+        display:flex;
+        display:none;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        width: 30%;
+        border-radius: 20px;
+        background-color: rgba(0, 253, 76, 0.5);
+        box-shadow: 0px 0px 10px #000;
+        margin-left:2%;
+        margin-top: 5%;
+
       }
 
   body
     h1
       div(style='display: flex; align-items: center;')
         img(src=`/static/images/Melon로고.jpg` alt='이미지 없음')
-        div
+        div.navigator
           input(type="form" name="favorite" placeholder="노래 검색")
+          button.btn.btn-primary(type="button") (+) Play List 
+
     // 게시글 목록 표시 부분
     div.container
       div.item1
@@ -244,8 +274,9 @@ html
             //- a(href=`${post.url}`, target='_blank')
             img.imgitem(src=`/static/images/play.jpg` style='max-width: 40%' ,alt=`${post.url}`)
           span.item2-9
-            a(href=``, target='_blank')
-              img(src=`/static/images/장바구니.jpg` style='max-width: 40%' , alt='이미지 없음')
+            //- a(href=``, target='_blank')
+            img.basket(src=`/static/images/장바구니.jpg` style='max-width: 40%' , alt='이미지 없음')
+            img.addbasket(src=`/static/images/(클릭)장바구니.jpg` style='max-width: 40%' , alt='이미지 없음')
           span.item2-10
             a(href=``, target='_blank')
               img(src=`/static/images/다운로드.jpg` style='max-width: 50%' , alt='이미지 없음')

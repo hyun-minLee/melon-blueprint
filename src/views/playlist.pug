@@ -2,6 +2,7 @@ doctype html
 html
   head
     title My List
+    script(src='static/js/main.js')
   
     style.
       .container {
@@ -90,6 +91,14 @@ html
         width: 30%;
         height: 80%;
       }
+      #play {
+        display:block;
+      }
+
+      #stop {
+        display:none;
+      }
+     
       
   body
     div.container
@@ -133,7 +142,8 @@ html
           div 별 보로 가자
         span.item4-2
           img.item4-3(src=`/static/images/뒤로가기.jpg` alt='이미지 없음')
-          img.item4-3(src=`/static/images/재생.jpg` alt='이미지 없음')
+          img.item4-3#play(src=`/static/images/재생.jpg` alt='이미지 없음')
+          img.item4-3#stop(src=`/static/images/멈춤.jpg` alt='이미지 없음')
           img.item4-3(src=`/static/images/앞으로가기.jpg` alt='이미지 없음')
           
               
