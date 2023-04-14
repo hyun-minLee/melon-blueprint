@@ -8,19 +8,26 @@ var fs = require('fs');
 var ejs = require('ejs');
 
 export const playlist = async (req, res) => {
-  const parseUrl = url.parse(req.url, true);
-  const query = parseUrl.query;
-  const name = query.name;
 
-  // res.setHeader('Content-Type', 'text/plain');
-  // res.writeHead(200);
+  const submitdata = req.query.submitdata;
+  const receivedData = JSON.parse(submitdata);
+  // const image = receivedData[0][0].image;
+  // const title = receivedData[0][1].title;
+  // const singer = receivedData[0][2].singer;
+  // const like = receivedData[0][3].like;
 
-  console.log("**********");
-  console.log(name);
-  
+  receivedData.forEach(([{ image }, { title }, { singer }, { like }]) => {
+    // 추출된 데이터를 콘솔에 출력합니다.
+    console.log('Data extracted from GET request:');
+    console.log('Image URL:', image);
+    console.log('Title:', title);
+    console.log('Singer:', singer);
+    console.log('Like:', like);
+    console.log('-----');
+  });
+  res.writeHead(200, { 'Content-Type': 'text/html' });
 
-  
-  return res.render("playlist", { pageTitle: "Home" });
+  return res.render("playlist", { receivedData });
 };
 
 export const home = async (req, res) => {

@@ -76,19 +76,19 @@ import "/src/assets/css/mycss.css";
                 object.push({'like': like});
                 submitdata.push(object);
 
-                basket[i].style.display='none';
-                basket[i].style.display.filter
-                if(submitdata.length >1) {
-                console.log(submitdata);
 
-            
+                basket[i].style.display='none'; 
+                // basket[i].style.display.filter;
+
+                if(submitdata.length>0) {
+                    console.log(submitdata);
                 }
             });
         }
 
         btn.addEventListener('click', function() {
             console.log("버튼");
-            window.location.href='/playlist?submitdata'+submitdata;
+            window.location.href=`/playlist?submitdata=${JSON.stringify(submitdata)}`;
         });
 
 
