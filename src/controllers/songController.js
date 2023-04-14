@@ -2,11 +2,21 @@ import { async } from "regenerator-runtime";
 import Song from "../models/Song";
 import User from "../models/User";
 import db from "../db";
+const http = require('http');
+const url = require('url');
 var fs = require('fs');
 var ejs = require('ejs');
 
 export const playlist = async (req, res) => {
-  console.log(req.submitdata);
+  const parseUrl = url.parse(req.url, true);
+  const query = parseUrl.query;
+  const name = query.name;
+
+  // res.setHeader('Content-Type', 'text/plain');
+  // res.writeHead(200);
+
+  console.log("**********");
+  console.log(name);
   
 
   
