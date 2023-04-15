@@ -33,33 +33,52 @@ html
         width: 100%;
       }
 
-      .item2-1, .item2-2 {
+      .item2-1 {
         display:flex;
         align-items: center;
         justify-content: center;
-        background-color: rgba(0, 0, 0, 0.65);
+        background-color: #666666;
         width: 30%;
         height:40px;
         border-radius: 20px;
         box-shadow: 0px 0px 10px #000;
       }
+
+      .item2-2 {
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #FFFFFF;
+        width: 30%;
+        height:40px;
+        border-radius: 20px;
+        box-shadow: 0px 0px 10px #000;
+      }
+      
       .item3 {
         margin-top: 5%;
         display:flex;
         flex-direction: row;
+        width:90%;
+        border: 3px solid rgb(255,255,255);
+        background-color: #FFFFFF;
+        box-shadow: 5px 5px 10px #000;
+        
       }
 
       .item3-1  {
+        margin-left:5%;
         height: 8vh;
         width: 20%;
         border-radius: 5px;
-        box-shadow: 0px 0px 10px #000;
+        box-shadow: 0px 0px 5px #000;
       }
       .item3-2  {
-        margin-left:5%;
+        margin-left:2%;
         display:flex;
         flex-direction: column;
         justify-content: center;
+        width: 60%;
       }
 
       .item4 {
@@ -105,40 +124,16 @@ html
         img.item1(src=`/static/images/Melon로고.jpg` alt='이미지 없음')
       div.item2
         span.item2-1 shuffle
-        span.item2-2 좋아요 
-      div.item3
-        img.item3-1(src=`/static/images/Melon로고.jpg` alt='이미지 없음')
-        div.item3-2
-          div 적재
-          div 별 보로 가자
-      div.item3
-        img.item3-1(src=`/static/images/Melon로고.jpg` alt='이미지 없음')
-        div.item3-2
-          div 적재
-          div 별 보로 가자
-      div.item3
-        img.item3-1(src=`/static/images/Melon로고.jpg` alt='이미지 없음')
-        div.item3-2
-          div 적재
-          div 별 보로 가자
-      div.item3
-        img.item3-1(src=`/static/images/Melon로고.jpg` alt='이미지 없음')
-        div.item3-2
-          div 적재
-          div 별 보로 가자
-      div.item3
-        img.item3-1(src=`/static/images/Melon로고.jpg` alt='이미지 없음')
-        div.item3-2
-          div 적재
-          div 별 보로 가자
-      div.item3
-        img.item3-1(src=`/static/images/Melon로고.jpg` alt='이미지 없음')
-        div.item3-2
-          div 적재
-          div 별 보로 가자
+        span.item2-2 좋아요
+      
+      each data in receivedData
+        div.item3
+          img.item3-1(src=`${data[0].image}` alt='이미지 없음')
+          div.item3-2
+            div #{data[2].singer}
+            div #{data[1].title}
       div.item4
         span.item4-1
-          div 별 보로 가자
         span.item4-2
           img.item4-3(src=`/static/images/뒤로가기.jpg` alt='이미지 없음')
           img.item4-3#play(src=`/static/images/재생.jpg` alt='이미지 없음')
@@ -146,4 +141,31 @@ html
           img.item4-3(src=`/static/images/앞으로가기.jpg` alt='이미지 없음')
           
               
-    
+        //- div.item3
+      //-   img.item3-1(src=`/static/images/Melon로고.jpg` alt='이미지 없음')
+      //-   div.item3-2
+      //-     div 적재
+      //-     div 별 보로 가자
+      //- div.item3
+      //-   img.item3-1(src=`/static/images/Melon로고.jpg` alt='이미지 없음')
+      //-   div.item3-2
+      //-     div 적재
+      //-     div 별 보로 가자
+      //- div.item3
+      //-   img.item3-1(src=`/static/images/Melon로고.jpg` alt='이미지 없음')
+      //-   div.item3-2
+      //-     div 적재
+      //-     div 별 보로 가자
+      //- div.item3
+      //-   img.item3-1(src=`/static/images/Melon로고.jpg` alt='이미지 없음')
+      //-   div.item3-2
+      //-     div 적재
+      //-     div 별 보로 가자
+      //- div.item3
+      //-   img.item3-1(src=`/static/images/Melon로고.jpg` alt='이미지 없음')
+      //-   div.item3-2
+      //-     div 적재
+      //-     div 별 보로 가자
+      //- div.item4
+      //-   span.item4-1
+      //-     div 별 보로 가자

@@ -9,6 +9,7 @@ var ejs = require('ejs');
 
 export const playlist = async (req, res) => {
 
+  let datalist= []
   const submitdata = req.query.submitdata;
   const receivedData = JSON.parse(submitdata);
   // const image = receivedData[0][0].image;
@@ -24,10 +25,16 @@ export const playlist = async (req, res) => {
     console.log('Singer:', singer);
     console.log('Like:', like);
     console.log('-----');
-  });
-  res.writeHead(200, { 'Content-Type': 'text/html' });
+    // datalist.push(image);
+    // datalist.push(title);
+    // datalist.push(singer);
+    // datalist.push(like);
 
-  return res.render("playlist", { receivedData });
+    // console.log(`datalist: ${datalist}`);
+  });
+  // res.writeHead(200, { 'Content-Type': 'text/html' });
+
+  return res.render("playlist", { receivedData : receivedData });
 };
 
 export const home = async (req, res) => {
