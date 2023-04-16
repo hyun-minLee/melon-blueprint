@@ -208,7 +208,7 @@ html
       }
 
       input[type="form"][name="favorite"] {
-      width: 50%;
+      width: 30%;
       position: relative;
       border-radius: 10px;
       border: 2px solid rgba(0, 253, 76, 0.5);
@@ -218,7 +218,6 @@ html
 
       .btn.btn-primary {
         display:flex;
-        display:none;
         align-items: center;
         justify-content: center;
         height: 100%;
@@ -228,7 +227,19 @@ html
         box-shadow: 0px 0px 10px #000;
         margin-left:2%;
         margin-top: 5%;
+      }
 
+      .btn.btn-secondary {
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        width: 40%;
+        border-radius: 20px;
+        background-color: rgba(0, 253, 76, 0.5);
+        box-shadow: 0px 0px 10px #000;
+        margin-left:2%;
+        margin-top: 5%;
       }
 
   body
@@ -237,7 +248,8 @@ html
         img(src=`/static/images/Melon로고.jpg` alt='이미지 없음')
         div.navigator
           input(type="form" name="favorite" placeholder="노래 검색")
-          button.btn.btn-primary(type="button") (+) Play List 
+          button.btn.btn-primary(type="button") (+) Play List
+          button.btn.btn-secondary(type="button") 장바구니
 
     // 게시글 목록 표시 부분
     div.container

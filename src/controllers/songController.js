@@ -17,6 +17,9 @@ export const playlist = async (req, res) => {
   // const singer = receivedData[0][2].singer;
   // const like = receivedData[0][3].like;
 
+  //세션 객체에 저장
+  req.session.data = receivedData;
+
   receivedData.forEach(([{ image }, { title }, { singer }, { like }]) => {
     // 추출된 데이터를 콘솔에 출력합니다.
     console.log('Data extracted from GET request:');
@@ -36,6 +39,29 @@ export const playlist = async (req, res) => {
 
   return res.render("playlist", { receivedData : receivedData });
 };
+
+export const mylist = async (req, res) => {
+  console.log("mylist");
+  let myplaylist;
+  const receivedData = req.session; // 세션 데이터 조회
+  if(receivedData.isLoggedIn) {
+    console.log("true");
+    console.log(receivedData.username);
+    console.log(receivedData.data);
+    console.log(receivedData.data[0][0].image);
+    console.log(receivedData.data[0][1].title);
+    console.log(receivedData.data[0][2].singer);
+    console.log(receivedData.data[0][3].like);
+
+    myplaylist=receivedData.data;
+    
+  }
+
+  return res.render("mylist", {  myplaylist : myplaylist });
+  // res.json(receivedData); // 세션 데이터를 응답으로 전송
+};
+
+
 
 export const home = async (req, res) => {
   console.log("home");

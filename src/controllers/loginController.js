@@ -15,17 +15,29 @@ export const login = async (req, res) => {
 // };
 
 export const postlogin = async (req, res) => {
+
+  // console.log("fffffffffffffff");
+  // const data = req.body;
+  // req.session.data = data;
+
+  // console.log(`세션 데이터 저장 ${req.session.data}`);
+  // const parsingdata = JSON.stringify(req.session.data);
+  // console.log(`parsingdata: ${parsingdata}`);
     console.log("Post Login");
     const { username, password } =  req.body;
     console.log({username, password});
-    if(username == 'admin' && password == 'admin') {
+    if (username === 'admin' && password === 'admin') {
       req.session.isLoggedIn = true;
       req.session.username = username;
-      res.redirect('/find');
+      req.session.save((err) => {
+        if (err) {
+          console.error('세션 저장 중 에러 발생:', err);
+          res.json({ result: 'error', message: '세션 저장 중 에러 발생' });
+        } else {
+          res.redirect('/find'); // 클라이언트로 리다이렉트
+        }
+      });
     } else {
-      res.send('Invalid username or password');
-      // res.redirect('/login');
-      
-      
+      res.json({ result: 'fail', message: '로그인 실패' });
     }
   }

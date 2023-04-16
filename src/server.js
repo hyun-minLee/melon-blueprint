@@ -10,6 +10,7 @@ import findRouter from "./routers/findRouter"
 import pugRouter from "./routers/pugRouter"
 import loginRouter from "./routers/loginRouter"
 import playlistRouter from "./routers/playlistRouter"
+import mylistRouter from "./routers/mylistRouter"
 import Song from "./models/Song";
 import db from "./db";
 var fs = require('fs');
@@ -42,6 +43,7 @@ app.use("/insert", insertRouter);
 app.use("/find", findRouter);
 app.use("/login", loginRouter);
 app.use("/playlist", playlistRouter);
+app.use("/mylist", mylistRouter);
 
 
 

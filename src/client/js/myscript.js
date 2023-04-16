@@ -49,6 +49,7 @@ import "/src/assets/css/mycss.css";
         let modalclose = document.querySelector('.modal-close');
         let imgitem = document.querySelectorAll('.imgitem');
         let btn = document.querySelector('.btn.btn-primary');
+        let btn2 = document.querySelector('.btn.btn-secondary');
         let basket = document.querySelectorAll('.basket');
         let addbasket = document.querySelectorAll('.addbasket');
         let item2 = document.querySelectorAll('.item2');
@@ -91,8 +92,53 @@ import "/src/assets/css/mycss.css";
             window.location.href=`/playlist?submitdata=${JSON.stringify(submitdata)}`;
         });
 
+        btn2.addEventListener('click', function() {
+            console.log("장바구니 버튼");
+            window.location.href='/mylist';
+            // const data = {
+            //     name: 'John',
+            //     age: 30,
+            //     email: 'john@example.com'
+            //     };
+
+            // fetch('/mylist', {
+                
+            //     method: 'POST',
+            //     headers: {
+            //     'Content-Type': 'application/json'
+            //     },
+            //     body: JSON.stringify(submitdata)
+            // }).then(response => {
+            //     if (!response.ok) {
+            //         throw new Error(`HTTP error! status: ${response.status}`);
+            //     }
+            //     return response.text();
+            // })
+        });
 
         modalclose.addEventListener('click', function() {
             myModal.style.display='none';
         }); 
     });
+
+
+
+
+    // btn2.addEventListener('click', function() {
+        //     console.log("장바구니 버튼");
+        //     // window.location.href='/playlist';
+        //     // const data = {
+        //     //     name: 'John',
+        //     //     age: 30,
+        //     //     email: 'john@example.com'
+        //     //     };
+
+        //     fetch('/mylist', {
+                
+        //         method: 'POST',
+        //         headers: {
+        //         'Content-Type': 'application/json'
+        //         },
+        //         body: JSON.stringify(submitdata)
+        //     }).then(response => response.text()).then(submitdata => console.log(submitdata)).catch(error => console.error(error));
+        // });

@@ -9,7 +9,6 @@ loginRouter.post("/", postlogin);
 
 
 
-
 // loginRouter.post("/", (req, res) => {
 //     console.log("1234");
 //     const { username, password } =  req.body;
@@ -22,7 +21,6 @@ loginRouter.post("/", postlogin);
 //         console.log("여기를 탐");
 //       res.redirect('/login');
 //       // res.send('Invalid username or password');
-      
 //     }
 //   });
 
