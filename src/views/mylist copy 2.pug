@@ -53,31 +53,20 @@ html
         font-family: 'Noto Sans KR', sans-serif;
       }
 
-      #back_p{
-        display:flex;
-        align-items: center;
-        width:75%;
-        height:8vh;
-      }
-
-      #back {
-        height:40%;
-      }
-
       .item1 {
         border-radius: 70%;
         width: 12vh;
-        height: 15%;
+        height: 12vh;
         background-color: whitesmoke;
         box-shadow: 0px 3px 30px 1px rgba(0, 0, 0, 0.3);
-        border-radius: 70%;
+        
       }
 
       .item2 {
         display: flex;
         align-items: center;
         justify-content: space-evenly;
-        height:10%; 
+        height:10vh;
         width: 100%;
       }
       .item22 {
@@ -85,7 +74,7 @@ html
         align-items: center;
         flex-direction: column;
         justify-content: center;
-        height:10%;
+        height:10vh;
         width: 100%;
       }
 
@@ -125,7 +114,7 @@ html
       }
       
       .item3 {
-        margin-top: 3%;
+        margin-top: 5%;
         display:flex;
         flex-direction: row;
         width:90%;
@@ -165,13 +154,12 @@ html
         justify-content: center;
         background-color: rgba(0, 0, 0, 0.0);
         width: 90%;
-        height:8vh;
+        height:5vh;
         border-radius: 20px;
         box-shadow: 0px 0px 5px #000;
         margin-top: 10%;
         box-shadow: 0px 2px 10px 0.5px rgba(0, 0, 0, 0.3);
         background-color: rgba(0, 0, 0, 0.75);
-        margin-bottom:10%;
       }
       .item4-1 {
         display:flex;
@@ -261,74 +249,8 @@ html
         background-color: black;
       }
       .container2-item5 {
-        display:flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
         width:100%;
         height: 15%;
-      }
-      .container2-item5-1 {
-        display:flex;
-        align-items: center;
-        justify-content: flex-end;
-        width:20%;
-        height: 100%;
-      }
-      .container2-item5-1-img {
-        width:30%;
-        height: 30%;
-      }
-      .container2-item5-2 {
-        display:flex;
-        align-items: center;
-        justify-content: center;
-        width:20%;
-        height: 100%;
-      }
-      .container2-item5-2-img {
-        width:30%;
-        height: 30%;
-      }
-
-      .container2-item5-3 {
-        display:flex;
-        align-items: center;
-        justify-content: center;
-        width:20%;
-        height: 100%;
-      }
-
-      .container2-item5-3-img {
-        width:60%;
-        height: 50%;
-        background-color: whitesmoke;
-        box-shadow: 0px 3px 30px 1px rgba(0, 0, 0, 0.3);
-        border-radius: 70%;
-      }
-      .container2-item5-4 {
-        display:flex;
-        align-items: center;
-        justify-content: center;
-        width:20%;
-        height: 100%;
-      }
-
-      .container2-item5-4-img {
-        width: 30%;
-        height: 30%;
-      }
-      .container2-item5-5 {
-        display:flex;
-        align-items: center;
-        justify-content: flex-start;
-        width:20%;
-        height: 100%;
-      }
-
-      .container2-item5-5-img {
-        width: 30%;
-        height: 30%;
       }
       .container2-item6 {
         width:100%;
@@ -352,8 +274,6 @@ html
     div.container
       div.leftcontainer
         div.container1
-          div#back_p
-            img#back(src=`/static/images/뒤로가기.png` alt='이미지 없음')
           img.item1(src=`/static/images/Melon로고.jpg` alt='이미지 없음')
           div.item22
             div.playing__singer 적재
@@ -387,14 +307,4 @@ html
             div.container2-item3-2 적재
           div.container2-item4
           div.container2-item5
-            div.container2-item5-1
-              img.container2-item5-1-img(src=`/static/images/반복.png` alt='이미지 없음')
-            div.container2-item5-2
-              img.container2-item5-2-img(src=`/static/images/왼쪽화살표2.png` alt='이미지 없음')
-            div.container2-item5-3
-              img.container2-item5-3-img(src=`/static/images/재생2.png` alt='이미지 없음')
-            div.container2-item5-4 
-              img.container2-item5-4-img(src=`/static/images/오른쪽화살표2.png` alt='이미지 없음')
-            div.container2-item5-5 
-              img.container2-item5-5-img(src=`/static/images/교차.png` alt='이미지 없음')
           div.container2-item6
