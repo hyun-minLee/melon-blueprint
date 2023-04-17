@@ -7,10 +7,46 @@ html
     style.
       .container {
         display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        width: 90%; 
+        background-color: lightgray;
+        
+        box-shadow: 0px 0px 10px #000;
+        font-family: "Noto Serif KR", serif;
+        font-weight: 700;
+        margin-left:5%;
+      }
+
+      .leftcontainer {
+        display:flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width:40%;
+        height:90%;
+        background-color:lightgray;
+      }
+
+      .rightcontainer {
+        display:flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width:40%;
+        height:90%;
+        background-color:lightgray;
+      }
+
+      .container1 {
+        display: flex;
         flex-direction: column;
         align-items: center;
-        height: 100vh;
-        width: 40vh; 
+        justify-content: center;
+        height: 100%;
+        width: 60%; 
         background-color: #f9f9f9;
         border-radius: 20px;
         box-shadow: 0px 0px 10px #000;
@@ -19,40 +55,63 @@ html
 
       .item1 {
         border-radius: 70%;
-        width: 100px;
-        height: 100px;
-        box-shadow: 0px 0px 10px #000;
-        margin-top: 40%;
+        width: 12vh;
+        height: 12vh;
+        margin-top: 5%;
+        background-color: whitesmoke;
+        box-shadow: 0px 3px 30px 1px rgba(0, 0, 0, 0.3);
         
       }
+
       .item2 {
         display: flex;
         align-items: center;
         justify-content: space-evenly;
-        height:60px;
+        height:10vh;
         width: 100%;
       }
+      .item22 {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        height:10vh;
+        width: 100%;
+      }
+
+      .playing__singer {
+        font-size: 20px;
+      }
+
+      .playing__title {
+        font-size: 13px;
+        color: rgba(0, 0, 0, 0.4);
+      }
+      
 
       .item2-1 {
         display:flex;
         align-items: center;
         justify-content: center;
-        background-color: #666666;
-        width: 30%;
-        height:40px;
+        background-color: rgba(0, 0, 0, 0.85);
+        font-size: 13px;
+        color: whitesmoke;
+        width: 40%;
+        height:7vh;
         border-radius: 20px;
-        box-shadow: 0px 0px 10px #000;
+        box-shadow: 0px 1px 5px 0.5px rgba(0, 0, 0, 0.2);
       }
 
       .item2-2 {
         display:flex;
         align-items: center;
         justify-content: center;
-        background-color: #FFFFFF;
-        width: 30%;
-        height:40px;
+        width: 40%;
+        height:7vh;
         border-radius: 20px;
-        box-shadow: 0px 0px 10px #000;
+        box-shadow: 0px 1px 5px 0.5px rgba(0, 0, 0, 0.2);
+        font-weight: 700;
+        font-size: 13px;
       }
       
       .item3 {
@@ -60,9 +119,8 @@ html
         display:flex;
         flex-direction: row;
         width:90%;
-        border: 3px solid rgb(255,255,255);
-        background-color: #FFFFFF;
-        box-shadow: 5px 5px 10px #000;
+        height:10%;
+        
         
       }
 
@@ -73,6 +131,7 @@ html
         border-radius: 5px;
         box-shadow: 0px 0px 5px #000;
       }
+
       .item3-2  {
         margin-left:2%;
         display:flex;
@@ -81,21 +140,51 @@ html
         width: 60%;
       }
 
+      .item3-2-1 {
+        font-size: 15px;
+        color: rgba(0, 0, 0, 0.4);
+      }
+      .item3-2-2 {
+        font-size: 12px;
+        color: black;
+      }
+
       .item4 {
         display:flex;
         flex-direction: row;
         justify-content: center;
         background-color: rgba(0, 0, 0, 0.0);
         width: 90%;
-        height:5%;
+        height:5vh;
         border-radius: 20px;
         box-shadow: 0px 0px 5px #000;
         margin-top: 10%;
+        box-shadow: 0px 2px 10px 0.5px rgba(0, 0, 0, 0.3);
+        background-color: rgba(0, 0, 0, 0.85);
       }
       .item4-1 {
         display:flex;
-        align-items: center;
+        flex-direction: column;
+        
+        justify-content: center;
         width:60%;  
+      }
+      .item4-1-1 {
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items:center;
+        font-size: 10px;
+        color: whitesmoke;
+        color: rgba(0, 0, 0, 0.5);
+      }
+      .item4-1-2 {
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items:center;
+        font-size: 12px;
+        color: whitesmoke;
       }
       .item4-2 {
         display:flex;
@@ -105,6 +194,71 @@ html
         width:40%;
         
       }
+
+      .container2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        width: 60%; 
+        background-color: #f9f9f9;
+        border-radius: 20px;
+        box-shadow: 0px 0px 10px #000;
+        font-family: 'Noto Sans KR', sans-serif;
+      }
+
+      .container2-item1 {
+        display:flex;
+        justify-content: center;
+        flex-direction: column;
+        width:65%;
+        height: 50%;
+      }
+
+      .container2-item2 {
+        
+        border-radius: 10%;
+        width:100%;
+        height: 70%;
+        box-shadow: 5px 15px 15px 0.5px lightpink;
+        margin-top: 20%;
+        
+      }
+      .container2-item3 {
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width:100%;
+        height: 15%;
+        margin-top: 20%;
+      }
+
+      .container2-item3-1 {
+        font-size: 20px;
+
+      }
+
+      .container2-item3-2 {
+        font-size: 16px;
+        color: rgba(0, 0, 0, 0.4);
+
+      }
+      .container2-item4 {
+        width:100%;
+        height: 15%;
+        background-color: black;
+      }
+      .container2-item5 {
+        width:100%;
+        height: 15%;
+      }
+      .container2-item6 {
+        width:100%;
+        height: 15%;
+      }
+
 
       .item4-3 {
         width: 30%;
@@ -120,57 +274,40 @@ html
       
   body
     div.container
-      div(style='display: flex; align-items: center;')
-        img.item1(src=`/static/images/Melon로고.jpg` alt='이미지 없음')
-      div.item2
-        span.item2-1 shuffle
-        span.item2-2 좋아요
+      div.leftcontainer
+        div.container1
+          div(style='display: flex; align-items: center;')
+            img.item1(src=`/static/images/Melon로고.jpg` alt='이미지 없음')
+          div.item22
+            div.playing__singer 적재
+            div.playing__title R&B
+          div.item2
+            span.item2-1 shuffle
+            span.item2-2 좋아요
       
-      each data in myplaylist
-        div.item3
-          img.item3-1(src=`${data[0].image}` alt='이미지 없음')
-          div.item3-2
-            div #{data[2].singer}
-            div #{data[1].title}
-      div.item4
-        span.item4-1
-        span.item4-2
-          img.item4-3(src=`/static/images/뒤로가기.jpg` alt='이미지 없음')
-          img.item4-3#play(src=`/static/images/재생.jpg` alt='이미지 없음')
-          img.item4-3#stop(src=`/static/images/멈춤.jpg` alt='이미지 없음')
-          img.item4-3(src=`/static/images/앞으로가기.jpg` alt='이미지 없음')
-          
-              
-        //- div.item3
-        //- img.item3-1(src=`/static/images/Melon로고.jpg` alt='이미지 없음')
-        //- div.item3-2
-        //-   div 적재
-        //-   div 별 보로 가자
-        //- div.item3
-      //-   img.item3-1(src=`/static/images/Melon로고.jpg` alt='이미지 없음')
-      //-   div.item3-2
-      //-     div 적재
-      //-     div 별 보로 가자
-      //- div.item3
-      //-   img.item3-1(src=`/static/images/Melon로고.jpg` alt='이미지 없음')
-      //-   div.item3-2
-      //-     div 적재
-      //-     div 별 보로 가자
-      //- div.item3
-      //-   img.item3-1(src=`/static/images/Melon로고.jpg` alt='이미지 없음')
-      //-   div.item3-2
-      //-     div 적재
-      //-     div 별 보로 가자
-      //- div.item3
-      //-   img.item3-1(src=`/static/images/Melon로고.jpg` alt='이미지 없음')
-      //-   div.item3-2
-      //-     div 적재
-      //-     div 별 보로 가자
-      //- div.item3
-      //-   img.item3-1(src=`/static/images/Melon로고.jpg` alt='이미지 없음')
-      //-   div.item3-2
-      //-     div 적재
-      //-     div 별 보로 가자
-      //- div.item4
-      //-   span.item4-1
-      //-     div 별 보로 가자
+          each data in myplaylist
+            div.item3
+              img.item3-1(src=`${data[0].image}` alt='이미지 없음')
+              div.item3-2
+                div.item3-2-1 #{data[2].singer}
+                div.item3-2-2 #{data[1].title}
+          div.item4
+            span.item4-1
+              div.item4-1-1 적재
+              div.item4-1-2 lullary
+            span.item4-2
+              img.item4-3(src=`/static/images/뒤로가기.jpg` alt='이미지 없음')
+              img.item4-3#play(src=`/static/images/재생.jpg` alt='이미지 없음')
+              img.item4-3#stop(src=`/static/images/멈춤.jpg` alt='이미지 없음')
+              img.item4-3(src=`/static/images/앞으로가기.jpg` alt='이미지 없음')
+
+      div.rightcontainer
+        div.container2
+          div.container2-item1
+            img.container2-item2(src=`/static/images/Melon로고.jpg` alt='이미지 없음')
+          div.container2-item3
+            div.container2-item3-1 Lullaby
+            div.container2-item3-2 적재
+          div.container2-item4
+          div.container2-item5
+          div.container2-item6
