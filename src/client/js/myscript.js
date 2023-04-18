@@ -25,7 +25,6 @@ import "/src/assets/images/재생2.png";
 import "/src/assets/images/오른쪽화살표2.png";
 import "/src/assets/images/반복.png";
 import "/src/assets/css/mycss.css";
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 
@@ -62,6 +61,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
         let addbasket = document.querySelectorAll('.addbasket');
         let item2 = document.querySelectorAll('.item2');
         let container = document.querySelector('.container');
+
         for(let i=0; i<imgitem.length; i++) {
             imgitem[i].addEventListener('click', function() {
             myModal.style.display = 'block';
