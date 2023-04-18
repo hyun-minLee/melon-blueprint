@@ -36,14 +36,23 @@ import "/src/assets/css/mycss.css";
         let singer_bar = document.querySelector('.item4-1-1');
         let title_bar = document.querySelector('.item4-1-2');
         
+        // const videoContainer = document.querySelector('video');
+        const videoItem = document.querySelector('.video-item');
+        // videoItem.innerHTML = '<iframe src="https://www.youtube.com/embed/1-Lm2LUR8Ss" frameborder="0" allowfullscreen></iframe>';
+        // videoContainer.appendChild(videoItem);
+
+
         for(let i=0; i<item3.length; i++) {
             item3[i].addEventListener('mousedown', function() {
-                console.log(item3[i].childNodes[0].src);
-                item1.src=item3[i].childNodes[0].src;
-                singer.innerHTML=item3[i].childNodes[1].childNodes[0].innerHTML;
-                singer_bar.innerHTML=item3[i].childNodes[1].childNodes[0].innerHTML;
-                title.innerHTML=item3[i].childNodes[1].childNodes[1].innerHTML;
-                title_bar.innerHTML=item3[i].childNodes[1].childNodes[1].innerHTML;
+
+                item1.src = item3[i].childNodes[0].src;
+                let songurl = item3[i].childNodes[0].alt;
+                console.log(songurl);
+                singer.innerHTML = item3[i].childNodes[1].childNodes[0].innerHTML;
+                singer_bar.innerHTML = item3[i].childNodes[1].childNodes[0].innerHTML;
+                title.innerHTML = item3[i].childNodes[1].childNodes[1].innerHTML;
+                title_bar.innerHTML = item3[i].childNodes[1].childNodes[1].innerHTML;
+                videoItem.innerHTML = `<iframe src= ${songurl} frameborder="0" allowfullscreen></iframe>`;
                 item3[i].classList.add('click');
             });
 

@@ -20,13 +20,14 @@ export const playlist = async (req, res) => {
   //세션 객체에 저장
   req.session.data = receivedData;
 
-  receivedData.forEach(([{ image }, { title }, { singer }, { like }]) => {
+  receivedData.forEach(([{ image }, { title }, { singer }, { like }, {songurl}]) => {
     // 추출된 데이터를 콘솔에 출력합니다.
     console.log('Data extracted from GET request:');
     console.log('Image URL:', image);
     console.log('Title:', title);
     console.log('Singer:', singer);
     console.log('Like:', like);
+    console.log('SongUrl:', songurl);
     console.log('-----');
     // datalist.push(image);
     // datalist.push(title);
@@ -52,6 +53,7 @@ export const mylist = async (req, res) => {
     console.log(receivedData.data[0][1].title);
     console.log(receivedData.data[0][2].singer);
     console.log(receivedData.data[0][3].like);
+    console.log(receivedData.data[0][4].songurl);
 
     myplaylist=receivedData.data;
     

@@ -79,12 +79,10 @@ import "/src/assets/css/mycss.css";
                 let title = item2[i].children[4].children[0].innerHTML;
                 let singer = item2[i].children[4].children[1].innerHTML;
                 let like = item2[i].children[6].children[1].innerHTML;
-                let songurl = imgitem[i].alt;
                 object.push({'image': image});
                 object.push({'title': title});
                 object.push({'singer': singer});
                 object.push({'like': like});
-                object.push({'songurl': songurl});
                 submitdata.push(object);
 
 

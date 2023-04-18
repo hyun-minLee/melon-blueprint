@@ -4,7 +4,8 @@ html
     title my playlist
     //- script(src='static/js/main.js')
     script(src='static/js/main.js')
-  
+    
+
     style.
       .container {
         display: flex;
@@ -225,17 +226,16 @@ html
         display:flex;
         justify-content: center;
         flex-direction: column;
-        width:65%;
-        height: 50%;
+        width:70%;
+        height: 30%;
+        margin-top:20%;
       }
 
-      .container2-item2 {
-        
+      .video-item iframe {
         border-radius: 10%;
         width:100%;
-        height: 70%;
+        height: 100%;
         box-shadow: 5px 15px 15px 0.5px lightpink;
-        margin-top: 20%;
         
       }
       .container2-item3 {
@@ -245,7 +245,7 @@ html
         justify-content: center;
         width:100%;
         height: 15%;
-        margin-top: 20%;
+        
       }
 
       .container2-item3-1 {
@@ -367,7 +367,7 @@ html
       
           each data in myplaylist
             div.item3
-              img.item3-1(src=`${data[0].image}` alt='이미지 없음')
+              img.item3-1(src=`${data[0].image}` alt=`${data[4].songurl}`)
               div.item3-2
                 div.item3-2-1 #{data[2].singer}
                 div.item3-2-2 #{data[1].title}
@@ -384,7 +384,7 @@ html
       div.rightcontainer
         div.container2
           div.container2-item1
-            img.container2-item2(src=`/static/images/Melon로고.jpg` alt='이미지 없음')
+            div.video-item
           div.container2-item3
             div.container2-item3-1 Lullaby
             div.container2-item3-2 적재
