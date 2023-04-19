@@ -40,21 +40,50 @@ import YouTubePlayer from 'youtube-player';
         let stopbutton = document.querySelector('.container2-item5-3-stop');
         // const videoContainer = document.querySelector('video');
         const videoItem = document.querySelector('.video-item');
+        let singer2 = document.querySelector('.container2-item3-1');
+        let title2 = document.querySelector('.container2-item3-2');
+        let progressBar = document.querySelector('.progress-bar');
         // videoItem.innerHTML = '<iframe src="https://www.youtube.com/embed/1-Lm2LUR8Ss" frameborder="0" allowfullscreen></iframe>';
         let videoId='';
 
+        // let intervalId;
+        
         let player = YouTubePlayer(videoItem, {
             videoId: videoId,
             width: 150,
             height: 150,
             playerVars: {  
             },
-          });
+            
+        });
 
+        // function PlayerStateChange(event) {
+        //     if (event.data === PlayerState.PLAYING) {
+        //       // 노래가 재생 중인 경우, 진행 바를 애니메이션으로 업데이트
+        //         console.log("재생중입니다.");
+        //         clearInterval(intervalId);
+        //         intervalId = setInterval(function() {
+        //         const currentTime = player.getCurrentTime(); // 현재 재생 중인 시간
+        //         const duration = player.getDuration(); // 전체 노래의 길이
+        //         const progress = (currentTime / duration) * 100; // 현재 시간에 따른 진행 바의 비율
+        //         progressBar.style.width = progress + '%'; // 진행 바 업데이트
+        //       }, 1000); // 1초마다 업데이트
+        //     }
+        // }
 
         playbutton.addEventListener('click', function() {
             player.loadVideoById(videoId);
             player.playVideo();
+            playbutton.style.display='none';
+            stopbutton.style.display='block'; 
+
+        });
+
+        stopbutton.addEventListener('click', function() {
+            // player.loadVideoById(videoId);
+            player.pauseVideo();
+            playbutton.style.display='block';
+            stopbutton.style.display='none';
         })
 
         for(let i=0; i<item3.length; i++) {
@@ -65,8 +94,10 @@ import YouTubePlayer from 'youtube-player';
                 let url = songurl.split('/').pop();
                 console.log(url);
                 singer.innerHTML = item3[i].childNodes[1].childNodes[0].innerHTML;
+                singer2.innerHTML = item3[i].childNodes[1].childNodes[0].innerHTML;
                 singer_bar.innerHTML = item3[i].childNodes[1].childNodes[0].innerHTML;
                 title.innerHTML = item3[i].childNodes[1].childNodes[1].innerHTML;
+                title2.innerHTML = item3[i].childNodes[1].childNodes[1].innerHTML;
                 title_bar.innerHTML = item3[i].childNodes[1].childNodes[1].innerHTML;
                 // videoItem.innerHTML = `<iframe class='my-video-frame' src= ${songurl} frameborder="0" allowfullscreen></iframe>`;
                 item3[i].classList.add('click');
@@ -78,7 +109,9 @@ import YouTubePlayer from 'youtube-player';
             });
         }
 
-  
+        
+
+
     });
 
 

@@ -261,8 +261,25 @@ html
       .container2-item4 {
         width:100%;
         height: 15%;
-        background-color: black;
       }
+
+      .song-bar {
+        top: 0;
+        left: 0;
+        height: 20%;
+        width: 10%;
+        background-color: #ff0000;
+        transition: width 1s linear; /* 애니메이션 효과 추가 */
+      }
+      .progress-bar {
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 0;
+        background-color: #ff0000;
+        transition: width 1s linear; /* 애니메이션 효과 추가 */
+      }
+
       .container2-item5 {
         display:flex;
         flex-direction: row;
@@ -315,6 +332,7 @@ html
         background-color: whitesmoke;
         box-shadow: 0px 3px 30px 1px rgba(0, 0, 0, 0.3);
         border-radius: 70%;
+        display:none;
       }
 
       .container2-item5-4 {
@@ -367,8 +385,8 @@ html
             img#back(src=`/static/images/뒤로가기.png` alt='이미지 없음')
           img.item1(src=`/static/images/Melon로고.jpg` alt='이미지 없음')
           div.item22
-            div.playing__singer 적재
-            div.playing__title R&B
+            div.playing__singer
+            div.playing__title 
           div.item2
             span.item2-1 shuffle
             span.item2-2 좋아요
@@ -381,8 +399,8 @@ html
                 div.item3-2-2 #{data[1].title}
           div.item4
             span.item4-1
-              div.item4-1-1 적재
-              div.item4-1-2 lullary
+              div.item4-1-1 
+              div.item4-1-2 
             span.item4-2
               img.item4-3(src=`/static/images/왼쪽화살표.png` alt='이미지 없음')
               img.item4-3#play(src=`/static/images/재생.png` alt='이미지 없음')
@@ -394,9 +412,11 @@ html
           div.container2-item1
             div.video-item
           div.container2-item3
-            div.container2-item3-1 Lullaby
-            div.container2-item3-2 적재
+            div.container2-item3-1 Title
+            div.container2-item3-2 Singer
           div.container2-item4
+            div.song-bar 
+              div.progress-bar
           div.container2-item5
             div.container2-item5-1
               img.container2-item5-1-img(src=`/static/images/반복.png` alt='이미지 없음')
