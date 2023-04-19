@@ -25,6 +25,7 @@ import "/src/assets/images/재생2.png";
 import "/src/assets/images/오른쪽화살표2.png";
 import "/src/assets/images/반복.png";
 import "/src/assets/css/mycss.css";
+import YouTubePlayer from 'youtube-player';
 
     window.addEventListener('DOMContentLoaded', function() {
         
@@ -35,32 +36,49 @@ import "/src/assets/css/mycss.css";
         let title = document.querySelector('.playing__title');
         let singer_bar = document.querySelector('.item4-1-1');
         let title_bar = document.querySelector('.item4-1-2');
-        
+        let playbutton = document.querySelector('.container2-item5-3-play');
+        let stopbutton = document.querySelector('.container2-item5-3-stop');
         // const videoContainer = document.querySelector('video');
         const videoItem = document.querySelector('.video-item');
         // videoItem.innerHTML = '<iframe src="https://www.youtube.com/embed/1-Lm2LUR8Ss" frameborder="0" allowfullscreen></iframe>';
-        // videoContainer.appendChild(videoItem);
+        let videoId='';
 
+        let player = YouTubePlayer(videoItem, {
+            videoId: videoId,
+            width: 150,
+            height: 150,
+            playerVars: {  
+            },
+          });
+
+
+        playbutton.addEventListener('click', function() {
+            player.loadVideoById(videoId);
+            player.playVideo();
+        })
 
         for(let i=0; i<item3.length; i++) {
             item3[i].addEventListener('mousedown', function() {
 
                 item1.src = item3[i].childNodes[0].src;
                 let songurl = item3[i].childNodes[0].alt;
-                console.log(songurl);
+                let url = songurl.split('/').pop();
+                console.log(url);
                 singer.innerHTML = item3[i].childNodes[1].childNodes[0].innerHTML;
                 singer_bar.innerHTML = item3[i].childNodes[1].childNodes[0].innerHTML;
                 title.innerHTML = item3[i].childNodes[1].childNodes[1].innerHTML;
                 title_bar.innerHTML = item3[i].childNodes[1].childNodes[1].innerHTML;
-                videoItem.innerHTML = `<iframe src= ${songurl} frameborder="0" allowfullscreen></iframe>`;
+                // videoItem.innerHTML = `<iframe class='my-video-frame' src= ${songurl} frameborder="0" allowfullscreen></iframe>`;
                 item3[i].classList.add('click');
+                videoId=url;
             });
 
             item3[i].addEventListener('mouseout', function() {
                 item3[i].classList.remove('click');
             });
         }
-        
+
+  
     });
 
 
