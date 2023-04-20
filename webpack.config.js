@@ -57,6 +57,10 @@ module.exports = {
         ]
       },
       {
+        test: /iframe_api/,
+        loader: 'script-loader'
+      },
+      {
         test: /\.js$/,
         use: {
           loader: "babel-loader",

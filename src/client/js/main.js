@@ -44,47 +44,80 @@ import YouTubePlayer from 'youtube-player';
         let title2 = document.querySelector('.container2-item3-2');
         let progressBar = document.querySelector('.progress-bar');
         // videoItem.innerHTML = '<iframe src="https://www.youtube.com/embed/1-Lm2LUR8Ss" frameborder="0" allowfullscreen></iframe>';
+
+        let player='';
         let videoId='';
-
-        // let intervalId;
+        let intervalId;
+        function onYouTubeIframeAPIReady() {
         
-        let player = YouTubePlayer(videoItem, {
-            videoId: videoId,
-            width: 150,
-            height: 150,
-            playerVars: {  
-            },
+            player = new YT.Player(videoItem, {
+                height: '150',
+                width: '150',
+                videoId: videoId, // Replace with your video ID
+                events: {
+                    'onReady': onPlayerReady,
+                    'onStateChange': onPlayerStateChange
+                }
+            });
+        }
+        
+        // let player = YouTubePlayer(videoItem, {
+        //     videoId: videoId,
+        //     width: 150,
+        //     height: 150,
+        //     playerVars: {  
+        //     },
             
-        });
+        // });
 
-        // function PlayerStateChange(event) {
-        //     if (event.data === PlayerState.PLAYING) {
-        //       // 노래가 재생 중인 경우, 진행 바를 애니메이션으로 업데이트
-        //         console.log("재생중입니다.");
-        //         clearInterval(intervalId);
-        //         intervalId = setInterval(function() {
-        //         const currentTime = player.getCurrentTime(); // 현재 재생 중인 시간
-        //         const duration = player.getDuration(); // 전체 노래의 길이
-        //         const progress = (currentTime / duration) * 100; // 현재 시간에 따른 진행 바의 비율
-        //         progressBar.style.width = progress + '%'; // 진행 바 업데이트
-        //       }, 1000); // 1초마다 업데이트
-        //     }
-        // }
-
-        playbutton.addEventListener('click', function() {
+        function onPlayerReady(event) {
+            console.log(event);
+            console.log("onPlayerReady");
             player.loadVideoById(videoId);
-            player.playVideo();
+          }
+        
+        function onPlayerStateChange(event) {
+            
+            if (event.data === YT.PlayerState.PLAYING) {
+                console.log('Video is now playing');
+                // 노래가 재생 중인 경우, 진행 바를 애니메이션으로 업데이트
+                
+                setInterval(function() {
+                const currentTime = player.getCurrentTime(); // 현재 재생 중인 시간
+                const duration = player.getDuration(); // 전체 노래의 길이
+                const progress = (currentTime / duration) * 100; // 현재 시간에 따른 진행 바의 비율
+                progressBar.style.width = progress + '%'; // 진행 바 업데이트
+                console.log("1");
+              }, 1000); // 1초마다 업데이트
+               
+            } else if (event.data === YT.PlayerState.PAUSED) {
+                console.log('Video is now paused');
+              
+            } else if (event.data === YT.PlayerState.ENDED) {
+                console.log('Video has ended');
+        
+            }
+        }
+        playbutton.addEventListener('click', function() {
+            // player.loadVideoById(videoId);
+            // player.playVideo();
             playbutton.style.display='none';
-            stopbutton.style.display='block'; 
+            stopbutton.style.display='block';
+            if(player === '') { 
+                onYouTubeIframeAPIReady()
+                console.log("처음 초기세팅");
+            } else {
+                player.playVideo();
+                console.log("일시정지했다가 시작");
+            }
 
         });
 
         stopbutton.addEventListener('click', function() {
-            // player.loadVideoById(videoId);
-            player.pauseVideo();
             playbutton.style.display='block';
             stopbutton.style.display='none';
-        })
+            player.pauseVideo();
+        });
 
         for(let i=0; i<item3.length; i++) {
             item3[i].addEventListener('mousedown', function() {
@@ -109,10 +142,22 @@ import YouTubePlayer from 'youtube-player';
             });
         }
 
-        
-
-
     });
 
 
+     // function PlayerStateChange(event) {
+        //     if (event.data === PlayerState.PLAYING) {
+        //       // 노래가 재생 중인 경우, 진행 바를 애니메이션으로 업데이트
+        //         console.log("재생중입니다.");
+        //         clearInterval(intervalId);
+        //         intervalId = setInterval(function() {
+        //         const currentTime = player.getCurrentTime(); // 현재 재생 중인 시간
+        //         const duration = player.getDuration(); // 전체 노래의 길이
+        //         const progress = (currentTime / duration) * 100; // 현재 시간에 따른 진행 바의 비율
+        //         progressBar.style.width = progress + '%'; // 진행 바 업데이트
+        //       }, 1000); // 1초마다 업데이트
+        //     }
+        // }
+
+       
 
