@@ -74,29 +74,25 @@ import YouTubePlayer from 'youtube-player';
             console.log(event);
             console.log("onPlayerReady");
             player.loadVideoById(videoId);
-            console.log("videoId===1"+videoId);
-          }
+
+        }
         
         function onPlayerStateChange(event) {
             
             if (event.data === YT.PlayerState.PLAYING) {
                 console.log('Video is now playing');
                 // 노래가 재생 중인 경우, 진행 바를 애니메이션으로 업데이트
-                
-            //     setInterval(function() {
-            //     const currentTime = player.getCurrentTime(); // 현재 재생 중인 시간
-            //     const duration = player.getDuration(); // 전체 노래의 길이
-            //     const progress = (currentTime / duration) * 100; // 현재 시간에 따른 진행 바의 비율
-            //     progressBar.style.width = progress + '%'; // 진행 바 업데이트
-            //     console.log("1");
-            //   }, 1000); // 1초마다 업데이트
-               
+                setInterval(function() {
+                const currentTime = player.getCurrentTime(); // 현재 재생 중인 시간
+                const duration = player.getDuration(); // 전체 노래의 길이
+                const progress = (currentTime / duration) * 100; // 현재 시간에 따른 진행 바의 비율
+                progressBar.style.width = progress + '%'; // 진행 바 업데이트
+
+              }, 1000); // 1초마다 업데이트
             } else if (event.data === YT.PlayerState.PAUSED) {
                 console.log('Video is now paused');
-              
             } else if (event.data === YT.PlayerState.ENDED) {
                 console.log('Video has ended');
-        
             }
         }
         playbutton.addEventListener('click', function() {

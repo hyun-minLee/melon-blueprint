@@ -261,23 +261,35 @@ html
       .container2-item4 {
         width:100%;
         height: 15%;
+        position: relative;
       }
 
       .song-bar {
         top: 0;
         left: 0;
-        height: 20%;
-        width: 10%;
-        background-color: #ff0000;
-        transition: width 1s linear; /* 애니메이션 효과 추가 */
+        height: 10px;
+        width: 100%;
+        background-color: #e0e0e0;
       }
+
       .progress-bar {
         top: 0;
         left: 0;
         height: 100%;
-        width: 0;
-        background-color: #ff0000;
-        transition: width 1s linear; /* 애니메이션 효과 추가 */
+        width: 0%;
+        background-color: #ff5722;
+        animation: progress-animation 1s linear;
+        animation-name: progress-animation;
+        animation-timing-function: linear;
+      }
+
+      @keyframes progress-animation {
+        0% {
+          width: 0%;
+        }
+        100% {
+          width: 100%;
+        }
       }
 
       .container2-item5 {
